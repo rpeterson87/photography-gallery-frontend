@@ -1,4 +1,4 @@
-const EditForm = ({handleSubmit, handleChange, photographyData, }) => {
+const EditForm = ({handleSubmit, handleChange, photographyData, val}) => {
   return (
     <form onSubmit={handleSubmit}>
         <label> 
@@ -54,7 +54,7 @@ const EditForm = ({handleSubmit, handleChange, photographyData, }) => {
         <label> 
         <span>Digital Print</span>
         <input 
-        type="number" 
+        type="text" 
         name="digitalprice"
         placeholder="Enter Online Photo Price"
         onChange={handleChange}
@@ -64,13 +64,14 @@ const EditForm = ({handleSubmit, handleChange, photographyData, }) => {
         <label> 
         <span>Print Price</span>
         <input 
-        type="number" 
+        type="text" 
         name="printprice"
         placeholder="Enter Photo Print Price"
         onChange={handleChange}
         value={photographyData.printprice}
         />
         </label>
+        <input type="submit" value={val} />
     </form>
   )
 }
