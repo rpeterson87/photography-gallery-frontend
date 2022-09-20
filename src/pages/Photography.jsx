@@ -146,16 +146,21 @@ function Photography({ URL }) {
   const loaded = () => {
     return photo.map((photo) => {
       return (
-        <div key={photo._id} className='person-card'>
-          <Link to={`/photo/${photo._id}`} >
-          <h1>{photo.title}</h1>
-          <h3>{photo.name}</h3>
-          <img src={photo.image} alt={photo.title} />
-          <h5>{photo.location}</h5>
-          <p>{photo.exif}</p>
-          <div>{photo.digitalprice} {photo.printprice}</div>
-          </Link>
-        </div>
+        <div key={photo._id} className='photo-card'>
+          <div className='card'>
+            <Link to={`/photo/${photo._id}`} >
+              <img className='show' src={photo.image} alt={photo.title} />
+            </Link>
+              <div className='card__details'>
+                <span className="tag">Nature</span>
+                <span className="tag">Lake</span>
+                <div className="name">{photo.title}</div>
+                <p>{photo.name}{photo.exif}{photo.location}</p>
+                <button>Buy now</button>
+              <div>{photo.digitalprice} {photo.printprice}</div>
+            </div>
+          </div>
+         </div>
       )
     })
   } 
@@ -177,9 +182,19 @@ function Photography({ URL }) {
 
   return(
     <>
-    <section>
+    <section className=''>
       <h2>Add Your Photo</h2>
       <form onSubmit={handleSubmit}>
+        <label>
+          <span>Image</span>
+          <input 
+          type="text"
+          name="image"
+          placeholder="Add Your Image"
+          onChange={handleChange}
+          value={newForm.image}
+          />
+        </label>
         <label>
           <span>Title</span>
           <input 
@@ -198,16 +213,6 @@ function Photography({ URL }) {
           placeholder="Add Your Name"
           onChange={handleChange}
           value={newForm.name}
-          />
-        </label>
-        <label>
-          <span>Image</span>
-          <input 
-          type="text"
-          name="image"
-          placeholder="Add Your Image"
-          onChange={handleChange}
-          value={newForm.image}
           />
         </label>
         <label>
