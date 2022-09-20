@@ -7,6 +7,7 @@ const Main = () => {
   const URL = "http://localhost:4000/photography/";
   return (
     <main>
+      
         <Routes>
             <Route path='/' element={<Photography URL={URL}/>} />
             <Route  path='/photo/:id' element={<Show URL={URL}/>} />
