@@ -174,18 +174,21 @@ const Show = ({ URL }) => {
 
     const loaded = () => {
     return (
-      <div className="person">
-        <h1>Show Page</h1>
-        <h2>{photo.title}</h2>
-        <h2>{photo.name}</h2>
-        <img src={photo.image} alt={photo.title} />
-        <h4>{photo.location}</h4>
-        <p>{photo.exif}</p>
-        <div>
-          <h1>{photo.digitalprice}</h1>
-          <h1>{photo.printprice}</h1>
-        </div>
-      </div>
+      <div key={photo._id} className='photo-card-show'>
+          <div className='card-show'>
+            <Link to={`/photo/${photo._id}`} >
+              <img className='show-image' src={photo.image} alt={photo.title} />
+            </Link>
+              <div className='card__details-show'>
+                <span className="tag-show">Nature</span>
+                <span className="tag-show">Lake</span>
+                <div className="name-show">{photo.title}</div>
+                <p className="ptag-show">{photo.name}{photo.exif}{photo.location}</p>
+                <button clas>Buy now</button>
+              <div className="price-show">{photo.digitalprice} {photo.printprice}</div>
+            </div>
+          </div>
+         </div>
     )
   }
 
@@ -193,7 +196,8 @@ const Show = ({ URL }) => {
     return <h1>Loading......</h1>
   }
 
-  return <section>
+  return <>
+    
     {photo ? <EditForm 
       handleChange={handleChange}
       handleSubmit={updatePhoto}
@@ -202,12 +206,12 @@ const Show = ({ URL }) => {
     /> : null}
     {photo ? loaded() : loading()}
     <div className="button-wrapper">
-      <Link to={'/'}>Back Home</Link>
-      <button
+      <Link className="header-name" to={'/'}>Back Home</Link>
+      <button className="delete"
       onClick={removePhoto}
       >Delete Photo</button>
     </div>
-  </section>
+    </>
 
 
 

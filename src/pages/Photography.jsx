@@ -150,15 +150,16 @@ function Photography({ URL }) {
           <div className='card'>
             <Link to={`/photo/${photo._id}`} >
               <img className='show' src={photo.image} alt={photo.title} />
-            </Link>
+            
               <div className='card__details'>
                 <span className="tag">Nature</span>
                 <span className="tag">Lake</span>
                 <div className="name">{photo.title}</div>
                 <p>{photo.name}{photo.exif}{photo.location}</p>
                 <button>Buy now</button>
-              <div>{photo.digitalprice} {photo.printprice}</div>
+              <div className='price'>{photo.digitalprice} {photo.printprice}</div>
             </div>
+            </Link>
           </div>
          </div>
       )
@@ -182,12 +183,16 @@ function Photography({ URL }) {
 
   return(
     <>
-    <section className=''>
-      <h2>Add Your Photo</h2>
+    <section className="people-list">
+      {photo && photo.length ? loaded() : loading()}
+    </section>
+    <div className='Add'>
+    <section className='add-photo'>
+      <h3>Add Your Photo</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          <span>Image</span>
-          <input 
+        <label className='flex1'>
+          <span>Image: </span>
+          <input className='flex2'
           type="text"
           name="image"
           placeholder="Add Your Image"
@@ -195,19 +200,19 @@ function Photography({ URL }) {
           value={newForm.image}
           />
         </label>
-        <label>
-          <span>Title</span>
-          <input 
+        <label className='flex1'>
+          <span>Title: </span>
+          <input className='flex2'
           type="text"
           name="title"
           placeholder="Add Photo Title"
           onChange={handleChange}
           value={newForm.title}
           />
-        </label>
-        <label>
-          <span>Name</span>
-          <input 
+        </label >
+        <label className='flex1'>
+          <span>Name: </span>
+          <input className='flex2'
           type="text"
           name="name"
           placeholder="Add Your Name"
@@ -215,9 +220,9 @@ function Photography({ URL }) {
           value={newForm.name}
           />
         </label>
-        <label>
-          <span>Location</span>
-          <input 
+        <label className='flex1'>
+          <span>Location: </span>
+          <input className='flex2'
           type="text"
           name="location"
           placeholder="Add Photo Location"
@@ -225,9 +230,9 @@ function Photography({ URL }) {
           value={newForm.location}
           />
         </label>
-        <label>
-          <span>Exif Data</span>
-          <input 
+        <label className='flex1'>
+          <span>Exif Data: </span>
+          <input className='flex2'
           type="text"
           name="exif"
           placeholder="Add Photo Exif Info"
@@ -235,9 +240,9 @@ function Photography({ URL }) {
           value={newForm.exif}
           />
         </label>
-        <label>
-          <span>Digital Print</span>
-          <input 
+        <label className='flex1'>
+          <span>Digital Print: </span>
+          <input className='flex2'
           type="text"
           name="digitalprice"
           placeholder="Add Digital Photo Price"
@@ -245,9 +250,9 @@ function Photography({ URL }) {
           value={newForm.digitalprice}
           />
         </label>
-        <label>
-          <span>Print Price</span>
-          <input 
+        <label className='flex1'>
+          <span>Print Price </span>
+          <input className='flex2'
           type="text"
           name="printprice"
           placeholder="Add Photo Print Price"
@@ -258,9 +263,7 @@ function Photography({ URL }) {
         <input type="submit" value="Add Photo" />
       </form>
     </section>
-    <section className="people-list">
-      {photo && photo.length ? loaded() : loading()}
-    </section>
+    </div>
     </>
   )
 }

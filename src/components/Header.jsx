@@ -3,10 +3,9 @@ import { Link } from "react-router-dom"
 const Nav = ({img, title, name}) => {
   return (
     <nav className="nav">
-    <Link to="/">
-    <img src={img} alt={name} role="presentation"/>
+    <Link className="nav" to="/">
+    {title}
     </Link>
-    <div>{title}</div>
     </nav>
   )
 }
@@ -14,17 +13,17 @@ const Nav = ({img, title, name}) => {
 
 const Header = (props) => {
     const content = {
-        navLogo: "https://i.imgur.com/FLJwv37.jpeg",
-        headerImage: "https://i.imgur.com/FLJwv37.jpeg",
-        headerAlt: "Orange cat looking at camera"
+        navLogo: "https://i.imgur.com/3b3dn2Q.jpg",
+        headerImage: "https://i.imgur.com/3b3dn2Q.jpg",
+        headerAlt: "The Dark Room Banner"
     }
 
     const {navLogo: logo, headerImage: img, headerAlt} = content
     return (
         <header style={{height: "360px", overflow: "hidden"}}>
-            <Nav title="Photography" alt="logo" img={logo}></Nav>
+            <Nav title="The Dark Room" alt="logo" img={logo}></Nav>
             <img
-            style={{width: "100px"}} 
+            style={{width: "100%"}} 
             alt={headerAlt}
             src={img} 
             />

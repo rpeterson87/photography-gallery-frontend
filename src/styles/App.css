@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #eaeff1;
+  background-color: rgb(40,40,40);
   font-family: "Raleway", sans-serif;
 }
 
+.header-name{
+  color: white;
+}
 
 .nav{
   display: flex;
@@ -15,18 +18,32 @@ body {
   align-items: center;
   width: 100%;
   padding: 8px 20px;
+  color: white;
+  text-decoration: none;
+}
+.nav:hover{
+  color: #0077ff;
+  
+}
+
+.header{
+  overflow: hidden;
+  size: 100%;
 }
 
 .nav div {
   margin-left: 20px;
 }
 
-.nav img {width: 45px; height: auto;}
+.nav img {
+  width: 45px; 
+  height: auto;
+}
 
 .people-list{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   margin-top: 40px;
 }
 
@@ -38,7 +55,7 @@ animation: loading infinite 3s linear;
 .people-list a{
     text-decoration: none;
     color: black;
-  }
+}
 
 
 /* for .map return */
@@ -48,8 +65,8 @@ animation: loading infinite 3s linear;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  border-radius: 100px;
-  max-width: 60%;
+  border-radius: 100%;
+  max-width: 75%;
   margin: 0 auto;
   margin-top: 5vh;
 }
@@ -57,37 +74,36 @@ animation: loading infinite 3s linear;
 .show {
   width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 1%;
 }
 
 .card {
-  background-color: white;
-  border: 1px solid #bacdd8;
-  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #050505;
+  border-radius: 1%;
 }
 
 .tag {
   padding: 4px 8px;
   border: 1px solid #e5eaed;
-
+  color: #5faef8;
   border-radius: 50px;
   font-size: 12px;
   font-weight: 600;
-  color: #788697;
 }
 
 /* Style div elements that have class equal to name */
 .name {
   font-size: 24px;
   font-weight: 600;
-
+  color: #ffffff;
   margin-top: 16px;
 }
 
 /* Style p element */
 p {
   font-size: 14px;
-  color: #7f8c9b;
+  color: #ffffff;
   line-height: 150%;
 }
 
@@ -99,7 +115,7 @@ button {
 
   font-weight: 600;
   color: #0077ff;
-  background-color: #e0efff;
+  background-color: #70b1f670;
 
   /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
   margin: 0 auto;
@@ -121,92 +137,141 @@ button:hover {
   color: #e0efff;
 }
 
+.price {
+  color: white;
+}
 
-
-
-
-
-
-
-.preview-container{
-  border: 1%;
-  border: 1px solid black;
-  box-sizing: border-box;
+.Add {
+  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  border-radius: 100px;
+  max-width: 20%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding-left: 5%;
+  color: white;
+  
+}
+.add-photo{
+  padding: 1%;
+  padding-bottom: 5%;
+}
+.flex1{
+  display: flex;
+  display: grid;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 
-.person{
-    display: grid;
-    grid-template-columns: 1fr 66vw 1fr;
-    margin: 40px;
-    border-top: 1px solid black;
-    padding: 64px;
-    align-items: center;
+.photo-card-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  border-radius: 100px;
+  max-width: 40%;
+  margin: 0 auto;
+  margin-top: 5vh;
 }
 
-.person > *{
-    grid-column-start: 2;
-    justify-self: center;
+.show-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-.person > img {
-    min-width: 66%;
+.card-show {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #050505;
+  border-radius: 5px;
 }
 
-.spacer {
-    border: 1px blue solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-.divider {
-    height: 10px;
-    background-color: black;
-    width: 100%;
-}
-.EditForm {
-    padding: 80px;
-    min-height: 25vh;
-    display: flex;
-    gap: 40px 24px;
-    background-color: #ddd;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: flex-start;
-    align-items: center;
+.tag-show {
+  padding: 4px 8px;
+  border: 1px solid #e5eaed;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5faef8;
 }
 
-.EditForm label{
-    min-width: 25%;
-    display: flex;
-    gap: 12px;
-    font-weight:bolder;
-    line-height:32px;
-    margin: 0 auto;
+/* Style div elements that have class equal to name */
+.name-show {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-top: 16px;
 }
-.EditForm label input[type="text"]{
-    display: block;
 
-    padding-left: 8px;
+/* Style p element */
+.ptag-show {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 150%;
 }
-.EditForm > input[type="submit"] {
-    /* background-color: blue; */
-    border: 0;
-    outline: 0;
-    margin: 0 auto;
-    padding: 8px 24px;
-    border-radius: 4px;
-    border-bottom: 2px solid #444;
-    min-width: 256px;
 
-    /* border-bottom: 1px solid #444; */
+
+
+
+.delete {
+  margin-bottom: 50px;
 }
-.EditForm > input[type="submit"]:active {
-    /* background-color: blue; */
-    border-bottom: 1px solid #444;
-    /* border-bottom: 1px solid #444; */
+
+
+input {
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #0077ff;
+  background-color: #000000;
 }
+input:focus,
+input:hover {
+  background-color: #0077ff;
+  color: #e0efff;
+}
+form {
+  border: none;
+  padding: 12px 24px 12px 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #0077ff;
+  
+  
+  cursor: pointer;
+}
+
+input:focus,
+input:hover {
+  background-color: #0077ff;
+  color: #e0efff;
+}
+
+.price-show {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes loading{
 from{
