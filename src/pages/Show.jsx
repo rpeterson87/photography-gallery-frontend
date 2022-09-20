@@ -91,6 +91,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 
 
+
 const Show = ({ URL }) => {
   const [photo, setPhoto] = useState(null)
   const [editForm, setEditForm] = useState("")
@@ -173,7 +174,7 @@ const Show = ({ URL }) => {
 
     const loaded = () => {
     return (
-      <div>
+      <div className="person">
         <h1>Show Page</h1>
         <h2>{photo.title}</h2>
         <h2>{photo.name}</h2>
@@ -200,7 +201,7 @@ const Show = ({ URL }) => {
       val={`Edit ${photo.title}`}
     /> : null}
     {photo ? loaded() : loading()}
-    <div>
+    <div className="button-wrapper">
       <Link to={'/'}>Back Home</Link>
       <button
       onClick={removePhoto}

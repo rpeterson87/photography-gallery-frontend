@@ -24,7 +24,7 @@ const Header = (props) => {
         <header style={{height: "360px", overflow: "hidden"}}>
             <Nav title="Photography" alt="logo" img={logo}></Nav>
             <img
-            style={{width: "25px"}} 
+            style={{width: "100px"}} 
             alt={headerAlt}
             src={img} 
             />

@@ -1,6 +1,6 @@
 const EditForm = ({handleSubmit, handleChange, photographyData, val}) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="EditForm">
         <label> 
         <span>Title</span>
         <input 

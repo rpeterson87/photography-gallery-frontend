@@ -101,7 +101,7 @@ function Photography({ URL }) {
 
     const createPhoto = async (photoData) => {
         try {
-            const newPhoto = await fetch(URL, {
+            await fetch(URL, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -146,7 +146,7 @@ function Photography({ URL }) {
   const loaded = () => {
     return photo.map((photo) => {
       return (
-        <div key={photo._id}>
+        <div key={photo._id} className='person-card'>
           <Link to={`/photo/${photo._id}`} >
           <h1>{photo.title}</h1>
           <h3>{photo.name}</h3>
@@ -160,7 +160,7 @@ function Photography({ URL }) {
     })
   } 
   const loading = () => (
-    <section>
+    <section className="people-list">
       <h1>
         Loading...
         <span>
@@ -253,7 +253,7 @@ function Photography({ URL }) {
         <input type="submit" value="Add Photo" />
       </form>
     </section>
-    <section>
+    <section className="people-list">
       {photo && photo.length ? loaded() : loading()}
     </section>
     </>

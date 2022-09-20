@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 8px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav div {
+  margin-left: 20px;
+}
+
+.nav img {width: 45px; height: auto;}
+
+.people-list{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.spinner {
+width: 24px;
+animation: loading infinite 3s linear;
+}
+
+.people-list a{
+    text-decoration: none;
+    color: black;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.person-card {
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  text-align: center;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.person{
+    display: grid;
+    grid-template-columns: 1fr 66vw 1fr;
+    margin: 40px;
+    border-top: 1px solid black;
+    padding: 64px;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.person > *{
+    grid-column-start: 2;
+    justify-self: center;
+}
+
+.person > img {
+    min-width: 66%;
+}
+
+.spacer {
+    border: 1px blue solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.divider {
+    height: 10px;
+    background-color: black;
+    width: 100%;
+}
+.EditForm {
+    padding: 80px;
+    min-height: 25vh;
+    display: flex;
+    gap: 40px 24px;
+    background-color: #ddd;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.EditForm label{
+    min-width: 25%;
+    display: flex;
+    gap: 12px;
+    font-weight:bolder;
+    line-height:32px;
+    margin: 0 auto;
+}
+.EditForm label input[type="text"]{
+    display: block;
+
+    padding-left: 8px;
+}
+.EditForm > input[type="submit"] {
+    /* background-color: blue; */
+    border: 0;
+    outline: 0;
+    margin: 0 auto;
+    padding: 8px 24px;
+    border-radius: 4px;
+    border-bottom: 2px solid #444;
+    min-width: 256px;
+
+    /* border-bottom: 1px solid #444; */
+}
+.EditForm > input[type="submit"]:active {
+    /* background-color: blue; */
+    border-bottom: 1px solid #444;
+    /* border-bottom: 1px solid #444; */
+}
+
+@keyframes loading{
+from{
+  transform: rotateZ(0deg);
+}
+to{
+  transform: rotateZ(360deg);
+}
 }
