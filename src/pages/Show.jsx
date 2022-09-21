@@ -42,10 +42,10 @@ const Show = ({ URL, getUser, user, isAuthenticated }) => {
       setEditForm(updatedPhoto)
       console.log(updatedPhoto)
 
-      
+      navigate(`/photography/${id}`, { replace: true });
     } catch (err) {
       console.log(err)
-      
+      navigate(`/photography/${id}`, { replace: true });
     }
   }
 
