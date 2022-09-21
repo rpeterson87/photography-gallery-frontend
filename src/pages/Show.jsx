@@ -75,7 +75,7 @@ const Show = ({ URL, getUser, user, isAuthenticated }) => {
 
     } catch (error) {
       console.log(error)
-      navigate(URL)
+      navigate('/')
     }
   }
 

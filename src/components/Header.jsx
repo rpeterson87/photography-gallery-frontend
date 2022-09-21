@@ -9,8 +9,8 @@ const Nav = ({ img, title, alt, user, handleLogout }) => {
       </Link>
       <div>
         { user && info._id ? (<Link className="nav2" onClick={handleLogout} to="/auth/logout">Logout {info.username}</Link> ) :
-          <><Link  to="/auth/login">Login</Link>
-          <Link to="/auth/register">Register</Link></>  
+          <><Link className="nav2" to="/auth/login">Login</Link>
+          <Link className="nav2"to="/auth/register">Register</Link></>  
         }
       </div>
     </nav>
