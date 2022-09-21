@@ -190,9 +190,9 @@ function Photography({ URL }) {
     <section className='add-photo'>
       <h3>Add Your Photo</h3>
       <form onSubmit={handleSubmit}>
-        <label className='flex1'>
+        <label >
           <span>Image: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="image"
           placeholder="Add Your Image"
@@ -200,9 +200,9 @@ function Photography({ URL }) {
           value={newForm.image}
           />
         </label>
-        <label className='flex1'>
+        <label >
           <span>Title: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="title"
           placeholder="Add Photo Title"
@@ -210,9 +210,9 @@ function Photography({ URL }) {
           value={newForm.title}
           />
         </label >
-        <label className='flex1'>
+        <label >
           <span>Name: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="name"
           placeholder="Add Your Name"
@@ -220,9 +220,9 @@ function Photography({ URL }) {
           value={newForm.name}
           />
         </label>
-        <label className='flex1'>
+        <label >
           <span>Location: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="location"
           placeholder="Add Photo Location"
@@ -230,9 +230,9 @@ function Photography({ URL }) {
           value={newForm.location}
           />
         </label>
-        <label className='flex1'>
+        <label >
           <span>Exif Data: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="exif"
           placeholder="Add Photo Exif Info"
@@ -240,9 +240,9 @@ function Photography({ URL }) {
           value={newForm.exif}
           />
         </label>
-        <label className='flex1'>
+        <label >
           <span>Digital Print: </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="digitalprice"
           placeholder="Add Digital Photo Price"
@@ -250,9 +250,9 @@ function Photography({ URL }) {
           value={newForm.digitalprice}
           />
         </label>
-        <label className='flex1'>
+        <label >
           <span>Print Price </span>
-          <input className='flex2'
+          <input 
           type="text"
           name="printprice"
           placeholder="Add Photo Print Price"

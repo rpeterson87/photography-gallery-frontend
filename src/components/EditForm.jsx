@@ -1,11 +1,10 @@
 const EditForm = ({handleSubmit, handleChange, photographyData, val}) => {
   return (
-    <div className="input">
+    <div >
     <form onSubmit={handleSubmit} >
-    <div className="input">
-        <label className="input"> 
-        <span className="input">Title</span>
-        <input className="input" 
+        <label > 
+        <span >Title</span>
+        <input  
         type="text" 
         name="title"
         placeholder="Enter Photo Title"
@@ -13,7 +12,6 @@ const EditForm = ({handleSubmit, handleChange, photographyData, val}) => {
         value={photographyData.title}
         />
         </label>
-        </div>
         <label> 
         <span>Name</span>
         <input 

@@ -167,7 +167,13 @@ button:hover {
   max-width: 100%;
   flex-direction: column;
   justify-content: flex-start;
+  
+
 }
+
+
+
+
 
 
 .photo-card-show {
@@ -192,6 +198,7 @@ button:hover {
   border: 1px solid #050505;
   border-radius: 5px;
 }
+
 
 .tag-show {
   padding: 4px 8px;
@@ -234,25 +241,21 @@ input {
 }
 input:focus,
 input:hover {
-  background-color: #0077ff;
-  color: #e0efff;
+  
+  color: #d9ebff;
 }
 form {
   border: none;
   padding: 12px 24px 12px 12px;
   border-radius: 50px;
   font-weight: 600;
-  color: #0077ff;
+  color: #ffffff;
   
   
   cursor: pointer;
 }
 
-input:focus,
-input:hover {
-  background-color: #0077ff;
-  color: #e0efff;
-}
+
 
 .price-show {
   color: white;
