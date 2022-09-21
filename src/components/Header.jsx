@@ -1,35 +1,42 @@
 import { Link } from "react-router-dom"
 
-const Nav = ({img, title, name}) => {
+const Nav = ({ img, title, alt, user, handleLogout }) => {
+  const info = {...user}
   return (
     <nav className="nav">
-    <Link className="nav" to="/">
-    {title}
-    </Link>
+      <Link className="nav" to="/">
+        {title}
+      </Link>
+      <div>
+        { user && info._id ? (<Link className="nav2" onClick={handleLogout} to="/auth/logout">Logout {info.username}</Link> ) :
+          <><Link  to="/auth/login">Login</Link>
+          <Link to="/auth/register">Register</Link></>  
+        }
+      </div>
     </nav>
   )
 }
 
 
 const Header = (props) => {
-    const content = {
-        navLogo: "https://i.imgur.com/3b3dn2Q.jpg",
-        headerImage: "https://i.imgur.com/3b3dn2Q.jpg",
-        headerAlt: "The Dark Room Banner"
-    }
+  const content = {
+    navLogo: "https://i.imgur.com/3b3dn2Q.jpg",
+    headerImage: "https://i.imgur.com/3b3dn2Q.jpg",
+    headerAlt: "The Dark Room Banner"
+  }
 
-    const {navLogo: logo, headerImage: img, headerAlt} = content
-    return (
-        <header style={{height: "360px", overflow: "hidden"}}>
-            <Nav title="The Dark Room" alt="logo" img={logo}></Nav>
-            <img
-            style={{width: "100%"}} 
-            alt={headerAlt}
-            src={img} 
-            />
-        </header>
-    )
+  const { navLogo: logo, headerImage: img, headerAlt } = content
+  return (
+    <header style={{ height: "100%", overflow: "hidden" }}>
+      <Nav title="The Dark Room" alt="logo" img={logo} user={props.user} handleLogout={props.handleLogout}/>
+      <img
+        style={{ width: "100%" }}
+        alt={headerAlt}
+        src={img}
+      />
+    </header>
+  )
 }
 
 export default Header
-export {Nav}
+export { Nav }
