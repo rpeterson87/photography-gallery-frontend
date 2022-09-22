@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(40,40,40);
+  background-color: rgb(0, 0, 0);
   font-family: "Raleway", sans-serif;
 }
 
@@ -23,12 +23,24 @@ body {
 }
 .nav:hover{
   color: #0077ff;
-  
 }
+
+.nav2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3px 3px;
+  color: white;
+  text-decoration: none;
+}
+.nav2:hover{
+  color: #0077ff;
+}
+
 
 .header{
   overflow: hidden;
-  size: 100%;
+  size: 60%;
 }
 
 .nav div {
@@ -40,7 +52,7 @@ body {
   height: auto;
 }
 
-.people-list{
+.photo-list{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -52,14 +64,11 @@ width: 24px;
 animation: loading infinite 3s linear;
 }
 
-.people-list a{
+.photo-list a{
     text-decoration: none;
     color: black;
 }
 
-
-/* for .map return */
-/* this is container */
 .photo-card {
   display: flex;
   flex-direction: column;
@@ -78,7 +87,7 @@ animation: loading infinite 3s linear;
 }
 
 .card {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(40,40,40);
   border: 1px solid #050505;
   border-radius: 1%;
 }
@@ -92,7 +101,7 @@ animation: loading infinite 3s linear;
   font-weight: 600;
 }
 
-/* Style div elements that have class equal to name */
+
 .name {
   font-size: 24px;
   font-weight: 600;
@@ -100,37 +109,29 @@ animation: loading infinite 3s linear;
   margin-top: 16px;
 }
 
-/* Style p element */
 p {
   font-size: 14px;
   color: #ffffff;
   line-height: 150%;
 }
 
-/* Style button element */
+
 button {
   border: none;
   padding: 12px 24px;
   border-radius: 50px;
-
   font-weight: 600;
   color: #0077ff;
   background-color: #70b1f670;
-
-  /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
   margin: 0 auto;
   display: block;
-
-  /* Button is a clickable element, therefore it should have a pointer cursor */
   cursor: pointer;
 }
 
 .card__details {
-  /* Add space around the details */
   padding: 16px 8px 8px 8px;
 }
 
-/* Add style when button is focused or hovered */
 button:focus,
 button:hover {
   background-color: #0077ff;
@@ -161,20 +162,14 @@ button:hover {
   padding: 1%;
   padding-bottom: 5%;
 }
+
 .flex1{
   display: flex;
   display: grid;
   max-width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  
-
 }
-
-
-
-
-
 
 .photo-card-show {
   display: flex;
@@ -194,7 +189,7 @@ button:hover {
 }
 
 .card-show {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(40, 40, 40);
   border: 1px solid #050505;
   border-radius: 5px;
 }
@@ -209,7 +204,6 @@ button:hover {
   color: #5faef8;
 }
 
-/* Style div elements that have class equal to name */
 .name-show {
   font-size: 24px;
   font-weight: 600;
@@ -217,20 +211,15 @@ button:hover {
   margin-top: 16px;
 }
 
-/* Style p element */
 .ptag-show {
   font-size: 14px;
   color: #ffffff;
   line-height: 150%;
 }
 
-
-
-
 .delete {
   margin-bottom: 50px;
 }
-
 
 input {
   padding: 5px 10px;
@@ -244,37 +233,19 @@ input:hover {
   
   color: #d9ebff;
 }
+
 form {
   border: none;
   padding: 12px 24px 12px 12px;
   border-radius: 50px;
   font-weight: 600;
   color: #ffffff;
-  
-  
   cursor: pointer;
 }
-
-
 
 .price-show {
   color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @keyframes loading{
 from{

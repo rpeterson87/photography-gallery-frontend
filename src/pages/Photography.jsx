@@ -1,85 +1,10 @@
-// import { useEffect, useState } from "react"
-// import {Link} from 'react-router-dom'
-
-
-
-
-// const Photography = () => {
-//   const URL = process.env.REACT_APP_URL || "http://localhost:4000/";
-//   // const [photo, setPhoto] = useState(null)
-//   const [photography, setPhotography] = useState(null)
-//   const initForm = {
-//     title: "",
-//     name: "",
-//     image: "",
-//     location: "",
-//     exif: "",
-//     digitalprice: "",
-//     printprice: "",
-//   }
-//   // console.log(initForm)
-//   const [newForm, setNewForm] = useState(initForm)
-//   // console.log(newForm)
-//   // console.log(photography)
-
-//   const getPhotography = async () => {
-
-//     console.log(URL)
-//     try {
-//       const response = await fetch(URL + "photography")
-//       console.log(response)
-//       const allPhotography = await response.json()
-//       console.log(allPhotography)
-      
-//       setPhotography(allPhotography)
-//     }catch(error){
-//       console.log(error)
-//     }
-//   }
-
-//   useEffect(() =>{
-//     setTimeout(()=> {
-//       getPhotography()
-//     }, 1200)
-//   }, [])
-
-
-//   const handleSubmit = async (event) => {
-//     event.default()
-//     try {
-//       const newPhoto = {...newForm}
-//       const testing = JSON.stringify(newPhoto)
-
-//       const options = {
-//         method: "POST",
-//         headers: {
-//           "Content-Type" : "application/json"
-//         },
-//         body: testing
-//       }
-//       const response = await fetch(URL, options)
-//       console.log(response)
-//       const responseData = await response.json()
-//       console.log(responseData)
-//       getPhotography(setPhotography)
-//       setNewForm(initForm)
-
-//     }catch(error){
-//       console.log(error)
-//     }
-//   }
-
-//   const handleChange = (event) => {
-//     console.log(event.target.value)
-//     const data = {...newForm, [event.target.name]: event.target.value}
-//     setNewForm(data)
-//   }  
-
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
+import { getUserToken } from '../utils/authToken'
+
 
 function Photography({ URL }) {
+  const isAuthenticated = !!getUserToken()
     const initForm = {
         title: "",
         name: "",
@@ -90,7 +15,7 @@ function Photography({ URL }) {
         printprice: "",
     }
     // This is the state 
-    const [photo, setPhoto] = useState(null);
+    const [photo, setPhoto] = useState([]);
     //  This is the state with an object
     const [newForm, setNewForm] = useState(initForm);
     // initial state for when the dom mounts 
@@ -116,7 +41,7 @@ function Photography({ URL }) {
     console.log(URL)
     const getPhoto = async () => {
         try {
-            const myPhoto = await fetch(URL);
+            const myPhoto = await fetch(`${URL}photography`);
             const allPhotography = await myPhoto.json();
             setPhoto(allPhotography);
         } catch (err) {
@@ -127,19 +52,39 @@ function Photography({ URL }) {
     console.log(photo);
 
     useEffect(() => {
-        getPhoto();
+      setTimeout(() => {
+        getPhoto(setPhoto);
+      }, 1200)
     }, []);
 
     const handleChange = (event) => {
-        setNewForm({ ...newForm, [event.target.name]: event.target.value })
+        const data = ({ ...newForm, [event.target.name]: event.target.value })
+        setNewForm(data)
     }
     // state in react is immutable 
     // we are required to pass a new value with each set 
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await createPhoto(newForm)
-        setNewForm(initForm)
+        try {
+          const newPhoto = { ...newForm }
+          const testingOutput = JSON.stringify(newPhoto)
+          const options = {
+            method: "POST",
+            headers: {
+              "Content-Type" : "application/json",
+              "Authorization" : `bearer ${getUserToken()}`
+            },
+            body: testingOutput
+          }
+          const response  = await fetch(URL + "photography", options)
+          const responseData = await response.json()
+          console.log(responseData)
+          await createPhoto(newForm)
+          setNewForm(initForm)
+        }catch(error){
+
+        }
     }
     console.log(newForm)
 
@@ -148,7 +93,7 @@ function Photography({ URL }) {
       return (
         <div key={photo._id} className='photo-card'>
           <div className='card'>
-            <Link to={`/photo/${photo._id}`} >
+            <Link to={`/photography/${photo._id}`} >
               <img className='show' src={photo.image} alt={photo.title} />
             
               <div className='card__details'>
@@ -166,7 +111,7 @@ function Photography({ URL }) {
     })
   } 
   const loading = () => (
-    <section className="people-list">
+    <section className="photo-list">
       <h1>
         Loading...
         <span>
@@ -183,11 +128,13 @@ function Photography({ URL }) {
 
   return(
     <>
-    <section className="people-list">
+
+    <section className="photo-list">
       {photo && photo.length ? loaded() : loading()}
     </section>
+    
     <div className='Add'>
-    <section className='add-photo'>
+    { isAuthenticated && <section className='add-photo'>
       <h3>Add Your Photo</h3>
       <form onSubmit={handleSubmit}>
         <label >
@@ -262,7 +209,7 @@ function Photography({ URL }) {
         </label>
         <input type="submit" value="Add Photo" />
       </form>
-    </section>
+    </section>}
     </div>
     </>
   )
