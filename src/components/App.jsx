@@ -22,7 +22,7 @@ function App() {
       };
 
       const newUser = await fetch(
-        "https://thedarkroom.herokuapp.com/",
+        "https://thedarkroom.herokuapp.com/auth/register",
         configs
       );
       const parsedUser = await newUser.json();

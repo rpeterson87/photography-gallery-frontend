@@ -19,7 +19,7 @@ const AuthForm = ({ signal, ...rest }) => {
       navigate('/auth/login', { replace: true })
     } catch (err) {
       console.log(err)
-      navigate('/auth/login', { replace: true });
+      navigate('/', { replace: true });
     }
   };
   return (
@@ -42,7 +42,7 @@ const AuthForm = ({ signal, ...rest }) => {
         onChange={handleChange}
         value={userInput.password}
       />
-      <input type="submit" value={login ? "Login" : "Signup"} />
+      <input type="submit" value={login ? "Login": "Signup"} />
     </form>
   );
 };
