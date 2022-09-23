@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# photography-gallery-backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is a site that was built for Photographers to display and sell their art work.
 
-In the project directory, you can run:
+# Screen shots
 
-### `npm start`
+ Below are screen shots of the games development from its wire frame to the complete game.
+ 
+ Step 1. Build the wire-frame
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ <img width="400" alt="Screen Shot 2022-08-07 at 8 41 58 PM" src="https://user-images.githubusercontent.com/9807461/191885637-6f4faf93-db2a-4991-9cf1-436081bbb2d7.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Step 2. Early stages of the design.
 
-### `npm test`
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191887621-740cda13-8d06-4de8-ae01-6ddadd9f1598.png" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Step 3. The final product 
 
-### `npm run build`
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191885906-128ee049-fe8a-4482-9dc8-3620c55b4589.png" /></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191886036-ac3d18d1-6582-4bf3-8f74-2916e0d00dc2.png" /></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Technologies Used: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To build this I used NodeJS, CSS, HTML, REACT & JavaScript 
 
-### `npm run eject`
+I first built the backend using NodeJS, MongoDB, Mongoose and Express. This allowed me to create my CRUD funtionality for my frontend, 
+which was tested using postman. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I then moved to the frontend where I used a combination of HTML, CSS, REACT and JS to built the sites structure. I used multiple componnents and pages. 
+Seperating out the redundant tasks into components allowed for a cleaner and DRYer code. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once that was complete I begin to work on stretch features. This included, Auth and a counter for a make shift shopping cart just to show functionality. 
+The Auth was rather dificult to implament. It requried a complete reworking of the routes along with conditionales for allowing users to create and delete images. 
+This was all done in a little over five days. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#Link to the backend github 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://github.com/rpeterson87/photography-gallery-backend
 
-## Learn More
+# Deployed Site 
+https://tranquil-begonia-062b97.netlify.app/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Next Steps:
 
-### Code Splitting
+When I have more time I would like to get a fully funtioning cart added. I would also like to add in the ability to upload images. 
+There is also alot more css that needs to be done. I would also like to have user pages for each account. That way you could find more images from that one user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
