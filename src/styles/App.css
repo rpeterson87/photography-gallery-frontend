@@ -27,6 +27,10 @@ body {
   text-decoration: none;
 }
 
+.index-show{
+  text-decoration: none;
+}
+
 .nav:hover {
   color: #0077ff;
 }

@@ -98,7 +98,7 @@ function Photography({ URL, Cart }) {
       return (
         <div key={photo._id} className='photo-card'>
           <div className='card'>
-            <Link to={`/photography/${photo._id}`} >
+            <Link className="index-show" to={`/photography/${photo._id}`} >
               <img className='show' src={photo.image} alt={photo.title} />
               <div className='card__details'></div>
               <span className="tag">Nature</span>

@@ -105,7 +105,7 @@ const Show = ({ URL, getUser, user, isAuthenticated }) => {
         <h3 className='counter'>{counter}</h3>
         <div key={photo._id} className='photo-card-show'>
           <div className='card-show'>
-            <Link to={`/photography/${photo._id}`} >
+            <Link className="index-show" to={`/photography/${photo._id}`} >
               <img className='show-image' src={photo.image} alt={photo.title} />
             </Link>
             <div className='card__details-show'>
