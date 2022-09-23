@@ -16,7 +16,7 @@ const AuthForm = ({ signal, ...rest }) => {
     event.preventDefault();
     try {
       await signal(userInput);
-      navigate('/', { replace: true })
+      navigate('/auth/login', { replace: true })
     } catch (err) {
       console.log(err)
       navigate('/auth/login', { replace: true });
