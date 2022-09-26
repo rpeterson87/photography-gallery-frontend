@@ -46,7 +46,7 @@ https://thedarkroom.herokuapp.com/photography
 
 # Deployed Site 
 
-https://brilliant-torte-20c083.netlify.app/
+https://thedarkroom1.netlify.app/
 
 
 # Next Steps:
